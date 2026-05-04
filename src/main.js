@@ -1,4 +1,4 @@
-chrome.storage.local.get(["SAFE", "TITLE"], ({ SAFE, TITLE }) => {
+chrome.storage.local.get(["SAFE", "TITLE", "MSG"], ({ SAFE, TITLE, MSG }) => {
   document.documentElement.innerHTML = "";
 
   const iframe = document.createElement("iframe");
@@ -16,4 +16,14 @@ chrome.storage.local.get(["SAFE", "TITLE"], ({ SAFE, TITLE }) => {
   document.documentElement.appendChild(iframe);
 
   document.title = TITLE;
+
+  console.log(`%c ${MSG} `, 
+    `
+    background: #1a1a2e; 
+    color: #ff4655; 
+    font-weight: bold; 
+    font-size: 12px; 
+    padding: 4px 8px; 
+    border-left: 3px solid #ff4655;
+  `);
 });

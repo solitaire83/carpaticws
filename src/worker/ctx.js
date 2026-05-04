@@ -1,8 +1,9 @@
 const SAFE = "https://carpatic.co";
 const TITLE = "Carpatic Unlocked";
+const MSG = "✰ Carpatic Unlocker V1M2 ✰"
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.local.set({ SAFE, TITLE });
+  chrome.storage.local.set({ SAFE, TITLE, MSG });
 
   chrome.declarativeNetRequest.updateDynamicRules({
     removeRuleIds: [1],
