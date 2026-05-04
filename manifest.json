@@ -12,20 +12,21 @@
     "*://www.carpaticgiveaways.com/*"
   ],
   "icons": {
-    "48": "./icons/1.png",
-    "96": "./icons/3.png",
-    "128": "./icons/5.png",
-    "512": "./icons/6.png"
+    "48": "./src/icons/1.png",
+    "96": "./src/icons/3.png",
+    "128": "./src/icons/5.png",
+    "512": "./src/icons/6.png"
   },
   "background": {
-    "service_worker": "app.js"
+    "service_worker": "src/main.js",
+    "type": "module"
   },
   "action": {
     "default_title": "Connection Status",
     "default_icon": {
-      "48": "./icons/1.png",
-      "96": "./icons/3.png",
-      "128": "./icons/5.png"
+      "48": "./src/icons/1.png",
+      "96": "./src/icons/3.png",
+      "128": "./src/icons/5.png"
     }
   }
 }

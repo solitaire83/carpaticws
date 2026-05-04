@@ -1,6 +1,6 @@
-const IPS = "http://carpatic.co"; 
+const IPS = "http://carpatic.co";
 
-const rules = [
+export const rules = [
   {
     id: 1,
     priority: 1,
@@ -25,7 +25,7 @@ const rules = [
       resourceTypes: ["main_frame"]
     }
   },
-    {
+  {
     id: 3,
     priority: 1,
     action: {
@@ -50,11 +50,3 @@ const rules = [
     }
   }
 ];
-
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.declarativeNetRequest.updateDynamicRules({
-    removeRuleIds: [1, 2, 3, 4],
-    addRules: rules
-  });
-  console.log("Webshield activated");
-});
