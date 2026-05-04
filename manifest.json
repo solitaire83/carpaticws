@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Carpatic",
+  "version": "1.0.0",
+  "description": "Unlocks Carpatic",
+  "permissions": ["declarativeNetRequest"],
+  "incognito": "spanning",
+  "host_permissions": [
+    "*://carpatic.win/*",
+    "*://www.carpatic.win/*",
+    "*://carpaticgiveaways.com/",
+    "*://www.carpaticgiveaways.com/"
+  ],
+  "background": {
+    "service_worker": "app.js"
+  },
+  "action": {
+    "default_title": "Connection Status"
+  }
+}
