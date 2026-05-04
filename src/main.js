@@ -1,9 +1,17 @@
-import { rules } from "./utils/rules.js";
+document.documentElement.innerHTML = "";
 
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.declarativeNetRequest.updateDynamicRules({
-    removeRuleIds: rules.map(r => r.id),
-    addRules: rules
-  });
-  console.log("Webshield activated");
-});
+const iframe = document.createElement("iframe");
+iframe.src = SAFE;
+iframe.style.cssText = `
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:none;
+    z-index:2147483647;
+`;
+
+document.documentElement.appendChild(iframe);
+
+document.title = TITLE;

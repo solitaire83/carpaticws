@@ -3,7 +3,6 @@
   "name": "Carpatic",
   "version": "1.1.4",
   "description": "Unlock Carpatic",
-  "permissions": ["declarativeNetRequest"],
   "incognito": "spanning",
   "host_permissions": [
     "*://carpatic.win/*",
@@ -17,10 +16,18 @@
     "128": "./src/icons/5.png",
     "512": "./src/icons/6.png"
   },
-  "background": {
-    "service_worker": "src/main.js",
-    "type": "module"
-  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://carpatic.win/*",
+        "*://www.carpatic.win/*",
+        "*://carpaticgiveaways.com/*",
+        "*://www.carpaticgiveaways.com/*"
+      ],
+      "js": ["src/config.js", "src/main.js"],
+      "run_at": "document_start"
+    }
+  ],
   "action": {
     "default_title": "Connection Status",
     "default_icon": {
