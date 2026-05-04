@@ -1,52 +1,14 @@
-const IPS = "http://carpatic.co";
+import { SAFE, DOMAINS } from "../config.js";
 
-export const rules = [
-  {
-    id: 1,
-    priority: 1,
-    action: {
-      type: "redirect",
-      redirect: { url: IPS }
-    },
-    condition: {
-      urlFilter: "carpatic.win",
-      resourceTypes: ["main_frame"]
-    }
+export const rules = DOMAINS.map((domain, i) => ({
+  id: i + 1,
+  priority: 1,
+  action: {
+    type: "redirect",
+    redirect: { url: SAFE }
   },
-  {
-    id: 2,
-    priority: 1,
-    action: {
-      type: "redirect",
-      redirect: { url: IPS }
-    },
-    condition: {
-      urlFilter: "www.carpatic.win",
-      resourceTypes: ["main_frame"]
-    }
-  },
-  {
-    id: 3,
-    priority: 1,
-    action: {
-      type: "redirect",
-      redirect: { url: IPS }
-    },
-    condition: {
-      urlFilter: "carpaticgiveaways.com",
-      resourceTypes: ["main_frame"]
-    }
-  },
-  {
-    id: 4,
-    priority: 1,
-    action: {
-      type: "redirect",
-      redirect: { url: IPS }
-    },
-    condition: {
-      urlFilter: "www.carpaticgiveaways.com",
-      resourceTypes: ["main_frame"]
-    }
+  condition: {
+    urlFilter: domain,
+    resourceTypes: ["main_frame"]
   }
-];
+}));
